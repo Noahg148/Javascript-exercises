@@ -1,5 +1,5 @@
-# Javascript-exercises
-## Warm Up
+# Javascript exercises
+## 🟨Warm Up
 ### hello_world
 ```javascript
 /*
@@ -179,7 +179,7 @@ const sum = number1 + number2;
 
 io.write(sum);
 ```
-## Selection
+## 🟨Selection
 ### check_sign
 ```javascript
 /*
@@ -394,7 +394,7 @@ if (isNaN(input)) {
   io.write("yes");
 }
 ```
-## Iteration
+## 🟨Iteration
 ### sum
 ```javascript
 /*
@@ -1131,7 +1131,7 @@ if (input < 2 || input > 9) {
   }
 }
 ```
-## Lists
+## 🟨Lists
 ### reverse_sequence
 ```javascript
 /*
