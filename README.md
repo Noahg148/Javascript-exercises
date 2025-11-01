@@ -712,8 +712,8 @@ while (height <= 0) {
   height = parseInt(io.read("> "));
 }
 
-const input = height;
-for (let k = 0; k < input; k++) {
+const temp = height;
+for (let k = 0; k < temp; k++) {
   let stars = "";
   for (let j = 0; j < height; j++) {
     stars += "*";
@@ -752,9 +752,9 @@ while (height <= 0) {
   height = parseInt(io.read("> "));
 }
 
-const input = height;
+const temp = height;
 let spaces = "";
-for (let k = 0; k < input; k++) {
+for (let k = 0; k < temp; k++) {
   let stars = "";
   for (let j = 0; j < height; j++) {
     stars += "*";
