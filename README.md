@@ -26,9 +26,9 @@ that prints that same line.
 
 import io from "../../utils/io-for-pf.js";
 
-const name = io.read("What is your name ");
+const input = io.read("> ");
 
-io.write(name);
+io.write(input);
 ```
 ### rectangle
 ```javascript
@@ -102,7 +102,7 @@ the string `3.14` (two digits after the decimal point) would than look like this
 
 import io from "../../utils/io-for-pf.js";
 
-const radius = parseFloat(io.read("Radius of the circle: "));
+const radius = parseFloat(io.read("> "));
 
 const area = radius * radius * Math.PI;
 
@@ -133,11 +133,11 @@ that outputs them in reverse order.
 
 import io from "../../utils/io-for-pf.js";
 
-const number1 = parseInt(io.read());
-const number2 = parseInt(io.read());
-const number3 = parseInt(io.read());
-const number4 = parseInt(io.read());
-const number5 = parseInt(io.read());
+const number1 = parseInt(io.read("> "));
+const number2 = parseInt(io.read("> "));
+const number3 = parseInt(io.read("> "));
+const number4 = parseInt(io.read("> "));
+const number5 = parseInt(io.read("> "));
 
 io.write(number5);
 io.write(number4);
@@ -155,8 +155,8 @@ The program prints the product (result of a multiplication) on screen.
 
 import io from "../../utils/io-for-pf.js";
 
-const number1 = parseInt(io.read());
-const number2 = parseInt(io.read());
+const number1 = parseInt(io.read("> "));
+const number2 = parseInt(io.read("> "));
 
 const product = number1 * number2;
 
@@ -172,8 +172,8 @@ The program prints the sum (result of a addition) on screen.
 
 import io from "../../utils/io-for-pf.js";
 
-const number1 = parseInt(io.read());
-const number2 = parseInt(io.read());
+const number1 = parseInt(io.read("> "));
+const number2 = parseInt(io.read("> "));
 
 const sum = number1 + number2;
 
@@ -191,16 +191,12 @@ The program prints a `-` when the number is negative.
 
 import io from "../../utils/io-for-pf.js";
 
-const integer = io.read("Give an integer: ");
+const integer = io.read("> ");
 
-if (isNaN(integer)) {
-  io.write(integer + " is not a number");
-} else if (integer > 0) {
+if (integer >= 0) {
   io.write("+");
 } else if (integer < 0) {
   io.write("-");
-} else {
-  io.write("+");
 }
 ```
 ### check_sign2
@@ -215,11 +211,9 @@ The program prints a `0` when the number is zero.
 
 import io from "../../utils/io-for-pf.js";
 
-const integer = io.read("Give an integer: ");
+const integer = io.read("> ");
 
-if (isNaN(integer)) {
-  io.write(integer + " is not a number");
-} else if (integer > 0) {
+if (integer > 0) {
   io.write("+");
 } else if (integer < 0) {
   io.write("-");
@@ -246,14 +240,12 @@ to a string using `toFixed`(inverse of parseFloat). Turning π into the string
 
 import io from "../../utils/io-for-pf.js";
 
-const radius = parseFloat(io.read("Radius of the circle: "));
+const radius = parseFloat(io.read("> "));
 
 if(radius < 0) {
   io.write("?");
 } else {
-
   const area = radius * radius * Math.PI;
-
   io.write(area.toFixed(3));
 }
 ```
@@ -276,7 +268,7 @@ Make a program print `odd` or `even` depending on the input (`int`).
 
 import io from "../../utils/io-for-pf.js";
 
-const number = parseInt(io.read("  > "));
+const number = parseInt(io.read("> "));
 
 if (number % 2 === 0) {
   io.write("even");
