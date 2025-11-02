@@ -191,7 +191,7 @@ The program prints a `-` when the number is negative.
 
 import io from "../../utils/io-for-pf.js";
 
-const integer = io.read("Give an integer: ");
+const integer = io.read("> ");
 
 if (integer >= 0) {
   io.write("+");
