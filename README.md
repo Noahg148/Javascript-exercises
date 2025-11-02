@@ -1643,3 +1643,300 @@ const b = [
 
 export { a, b, A, B, X, O};
 ```
+## 🟨Allround
+### sentinel_extreme
+```javascript
+/*
+# Sentinel Extreme
+Keep on asking for input (`int`) until a zero is entered.
+Finally, print both the smallest and the largest number
+that was entered (zero does not count).
+
+If no numbers were entered (only zero), you should print two zeros.
+
+## Example:
+    > -1
+    > -2
+    > 0
+    -2
+    -1
+*/
+
+import io from "../../utils/io-for-pf.js";
+
+let input = parseInt(io.read("> "));
+
+const numbers = [input];
+let i = 0;
+
+while (input !== 0) {
+  input = parseInt(io.read("> "));
+  i++;
+  numbers[i] = input;
+}
+
+let smallest = numbers[0];
+let largest = numbers[0];
+
+for (let j = 0; j < numbers.length - 1; j++) {
+  if (numbers[j] < smallest) {
+    smallest = numbers[j];
+  }
+  if (numbers[j] > largest) {
+    largest = numbers[j];
+  }
+}
+
+io.write(smallest);
+io.write(largest);
+```
+### factorial2
+```javascript
+/*
+  # Factorial (II)
+  Ask for a number (`int`) as input and output its factorial.
+
+  The factorial of a number n is n! with n! = n * (n-1) * ... * 3 * 2 * 1
+  Your program should print `does not compute` when a negative number is entered.
+  */
+
+import io from "../../utils/io-for-pf.js";
+
+const input = parseInt(io.read("> "));
+
+if (input < 0) {
+  io.write("does not compute");
+} else {
+  const arr = [];
+  let counter = 2;
+  let result = 1;
+  for (let i = 0; i < input - 1; i++) {
+    arr[i] = counter;
+    counter++;
+    result *= arr[i];
+  }
+  io.write(result);
+}
+```
+### factorial3
+```javascript
+/*
+# Factorial (III)
+Ask for a number (`int`) as input and output its factorial.
+Your program should keep on asking for input until a
+positive number is entered.
+
+## Example:
+    > -6
+    > -3
+    > 4
+    24
+*/
+
+import io from "../../utils/io-for-pf.js";
+
+let input = parseInt(io.read("> "));
+
+while (input < 0) {
+  input = parseInt(io.read("> "));
+}
+
+const arr = [];
+let counter = 2;
+let result = 1;
+
+for (let i = 0; i < input - 1; i++) {
+  arr[i] = counter;
+  counter++;
+  result *= arr[i];
+}
+
+io.write(result);
+```
+### variation
+```javascript
+/*
+# K-permutations of n (Dutch: "Variation")
+
+K-permutations of n is number of possible ways to we select k unique
+element from a set of size n, and we preserve order.
+This number can be computed using the following formula:
+
+(n)k = n! // (n-k)!
+
+ Where n! means faculty of n.
+
+Write a program that asks for such and k and n and computes the number
+of k-permutations of n.
+If either n or k is negative, your program should print ``does not compute```
+
+EXTRA REQUIREMENT: You should minimize the number of computations,
+otherwise the program will be to slow for large numbers.
+If your program is too slow, the tests will fail.
+*/
+
+import io from "../../utils/io-for-pf.js";
+
+const k = parseInt(io.read("> "));
+const n = parseInt(io.read("> "));
+
+if (k < 0 || n < 0){
+  io.write("does not compute");
+} else if (n < k) {
+  io.write(0);
+} else {
+  let result = n;
+  let temp = n - 1;
+  for (let i = 1; i < k; i++) {
+    result *= temp;
+    temp--;
+  }
+  io.write(result);
+}
+```
+### sentinel_extreme_pro
+```javascript
+/*
+# Sentinel Extreme Pro
+Keep on asking for input (`int`) until a zero is
+entered or when 10 numbers have been entered.
+Finally, print both the smallest and the largest
+number that was entered (zero does not count).
+
+If no numbers were entered (only zero), you should print two zeros.
+*/
+
+import io from "../../utils/io-for-pf.js";
+
+let input = parseInt(io.read("> "));
+
+const numbers = [input];
+let i = 0;
+
+while (input !== 0 && i < 9) {
+  input = parseInt(io.read("> "));
+  i++;
+  numbers[i] = input;
+}
+
+if (numbers.length > 1 && numbers[numbers.length - 1] === 0) {
+  numbers.pop();
+}
+
+let smallest = numbers[0];
+let largest = numbers[0];
+
+for (let j = 0; j < numbers.length; j++) {
+  if (numbers[j] < smallest) {
+    smallest = numbers[j];
+  }
+  if (numbers[j] > largest) {
+    largest = numbers[j];
+  }
+}
+
+io.write(smallest);
+io.write(largest);
+```
+### sentinel_armageddon with arrays
+```javascript
+/*
+# Sentinel Armageddon
+Keep on asking for input (`int`) until a zero is entered or when
+10 numbers have been entered. Finally, print *the index* of both
+the smallest and the largest number that was entered (zero does not count).
+The index of the first number is 1, the index of the second is 2, ...
+
+Try not to use an array.
+
+If no numbers were entered (only zero), you should print two zeros.
+*/
+
+import io from "../../utils/io-for-pf.js";
+
+let input = parseInt(io.read("> "));
+if (input === 0) {
+  io.write(0);
+  io.write(0);
+} else {
+  const numbers = [input];
+  let i = 0;
+
+  while (input !== 0 && i < 9) {
+    input = parseInt(io.read("> "));
+    i++;
+    numbers[i] = input;
+  }
+
+  if (numbers.length > 1 && numbers[numbers.length - 1] === 0) {
+    numbers.pop();
+  }
+
+  let smallest = numbers[0];
+  let largest = numbers[0];
+  let indexOfSmallest = 0;
+  let indexOfLargest = 0;
+
+  for (let j = 0; j < numbers.length; j++) {
+    if (numbers[j] < smallest) {
+      smallest = numbers[j];
+      indexOfSmallest = j;
+    }
+    if (numbers[j] > largest) {
+      largest = numbers[j];
+      indexOfLargest = j;
+    }
+  }
+
+  io.write(indexOfSmallest + 1);
+  io.write(indexOfLargest + 1);
+}
+```
+### sentinel_armageddon without arrays
+```javascript
+/*
+# Sentinel Armageddon
+Keep on asking for input (`int`) until a zero is entered or when
+10 numbers have been entered. Finally, print *the index* of both
+the smallest and the largest number that was entered (zero does not count).
+The index of the first number is 1, the index of the second is 2, ...
+
+Try not to use an array.
+
+If no numbers were entered (only zero), you should print two zeros.
+*/
+
+import io from "../../utils/io-for-pf.js";
+
+let input = parseInt(io.read("> "));
+
+if (input === 0) {
+  io.write(0);
+  io.write(0);
+} else {
+  let smallest = input;
+  let largest = input;
+  let indexOfSmallest = 1;
+  let indexOfLargest = 1;
+  let count = 1;
+
+  while (input !== 0 && count < 10) {
+    input = parseInt(io.read("> "));
+    count++;
+
+    if (input !== 0) {
+      if (input < smallest) {
+        smallest = input;
+        indexOfSmallest = count;
+      }
+      if (input > largest) {
+        largest = input;
+        indexOfLargest = count;
+      }
+    }
+  }
+
+  io.write(indexOfSmallest);
+  io.write(indexOfLargest);
+}
+```
