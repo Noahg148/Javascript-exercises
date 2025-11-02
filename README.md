@@ -779,6 +779,11 @@ as they defeat the purpose of the exercise.
     > -3
     > 0
     > 5
+        *
+       ** 
+      *** 
+     **** 
+    *****
 */
 
 import io from "../../utils/io-for-pf.js";
