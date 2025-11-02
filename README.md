@@ -1940,3 +1940,91 @@ if (input === 0) {
   io.write(indexOfLargest);
 }
 ```
+## de
+### de-demo
+```javascript
+// Plaats deze file in de (nieuwe) map "de" in de map "exercises".
+// Plaats de test file in de "test" map, naast de andere test files.
+
+/*
+
+Voor deze opgave zijn de tussenresultaten even belangrijk als het eindresultaat.
+Ook als het efficiënter zou zijn om twee delen in één keer te doen, volg de opgave en
+implementeer de delen apart.
+
+# Deel 1: de invoer
+Schrijf een programma dat aan de gebruiker geheel getal vraagt tussen de 1 en de 5.
+Maak een array dat even lang als het gegeven getal, gevuld met nullen.
+Geeft een gebruiker een getal in buiten dit interval of een niet-getal,
+maak je zo een array van lengte 5.
+Print deze array ook af.
+
+Voorbeelden:
+> 3
+[0, 0, 0]
+
+> 0
+[0, 0, 0, 0, 0]
+
+> stop
+[0, 0, 0, 0, 0]
+
+# Deel 2: de verwerking
+
+**Vervang** nu in de array alle nullen door de letters van de string `"abcde"` (in volgorde, voor zover er plaats is).
+
+**Belangrijk:** In de opgave staat *vervang*, je moet dus de originele array aanpassen en, je mag geen nieuwe array maken die de originele vervangt.
+
+Voorbeeld uitvoer:
+["a", "b", "c"]
+["a", "b", "c", "d", "e"]
+["a", "b", "c", "d", "e"]
+
+
+# Deel 3: de uitvoer
+
+Vraag de gebruiker om een getal op te geven.
+Print "het zoveelste element" (human count) uit deze array af.
+Als de positie niet bestaat, druk dan "Ongeldige positie" af.
+
+Voorbeeld :
+> 2
+b
+
+Voorbeeld 2:
+> 0
+Ongeldige positie
+
+Voorbeeld 3:
+> vier
+Ongeldige positie
+
+ */
+
+import io from "../../utils/io-for-pf.js";
+
+const size = parseInt(io.read("Give a number between 1 and 5: "));
+let arr;
+
+if (size < 1 || size > 5 || isNaN(size)) {
+  arr = new Array(5).fill(0);
+  io.write(arr);
+} else {
+  arr = new Array(size).fill(0);
+  io.write(arr);
+}
+
+const string = "abcde";
+for (let i = 0; i < arr.length; i++) {
+  arr[i] = string[i];
+}
+io.write(arr);
+
+const index = parseInt(io.read("Give a number: "));
+
+if (index > 0 && index <= arr.length) {
+  io.write(arr[index - 1]);
+} else {
+  io.write("Ongeldige positie");
+}
+```
