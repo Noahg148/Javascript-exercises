@@ -845,16 +845,12 @@ while (input <= 0) {
 }
 
 let stars;
-if (input % 2 === 0) {
-  stars = 2;
-} else {
-  stars = 1;
-}
-
 let temp;
 if (input % 2 === 0) {
+  stars = 2;
   temp = Math.floor(input / 2) - 1;
 } else {
+  stars = 1;
   temp = Math.floor(input / 2);
 }
 
@@ -869,7 +865,7 @@ for (let i = 0; i < Math.ceil(input / 2); i++) {
   }
   io.write(spaces + row);
   stars += 2;
-  temp--;
+  temp -= 1;
 }
 ```
 ### isosceles6
