@@ -495,7 +495,7 @@ let input = parseFloat(io.read("> "));
 
 while (input !== 0) {
   sum += input;
-  count += 1;
+  count++;
   input = parseFloat(io.read("> "));
 }
 
