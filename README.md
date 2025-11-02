@@ -865,7 +865,7 @@ for (let i = 0; i < Math.ceil(input / 2); i++) {
   }
   io.write(spaces + row);
   stars += 2;
-  temp -= 1;
+  temp--;
 }
 ```
 ### isosceles6
