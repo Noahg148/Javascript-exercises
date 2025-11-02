@@ -719,7 +719,7 @@ for (let k = 0; k < temp; k++) {
     stars += "*";
   }
   io.write(stars);
-  height -= 1;
+  height--;
 }
 ```
 ### isosceles3
@@ -760,7 +760,7 @@ for (let k = 0; k < temp; k++) {
     stars += "*";
   }
   io.write(spaces + stars);
-  height -= 1;
+  height--;
   spaces += " ";
 }
 ```
@@ -864,7 +864,7 @@ for (let i = 0; i < Math.ceil(input / 2); i++) {
   }
   io.write(spaces + row);
   stars += 2;
-  temp -= 1;
+  temp--;
 }
 ```
 ### isosceles6
